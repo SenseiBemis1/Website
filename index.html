@@ -14,7 +14,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./style.css?v=6" />
 </head>
 
 <body>
@@ -22,24 +22,47 @@
   <!-- HEADER / NAVBAR -->
   <header class="site-header">
     <nav class="navbar">
-      <a href="#" class="logo">Ryan<span>.</span></a>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
-        ☰
-      </button>
+      <a href="#" class="logo">
+        <span class="logo-name">Ryan Bemis</span>
+        <span class="logo-subtitle">Computer Science Student</span>
+      </a>
 
       <div class="nav-links" id="navLinks">
-        <a href="#about">About</a>
+        <a href="#about" class="active">About</a>
         <a href="#skills">Skills</a>
-        <a href="#certifications">Certifications</a>
+        <a href="#experience">Experience</a>
+        <a href="#learning">Learning</a>
         <a href="#projects">Projects</a>
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
       </div>
 
-      <button class="theme-toggle" id="themeToggle" type="button">
-        Dark Mode
-      </button>
+      <div class="nav-actions">
+        <a class="social-link" href="https://github.com/SenseiBemis1" target="_blank" aria-label="GitHub profile">
+          GH
+        </a>
+
+        <a class="social-link" href="https://www.linkedin.com/in/ryan-bemis-74225a405/" target="_blank" aria-label="LinkedIn profile">
+          in
+        </a>
+
+        <button class="theme-toggle" id="themeToggle" type="button">
+          Dark
+        </button>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="navLinks"
+          aria-expanded="false"
+        >
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
     </nav>
   </header>
 
@@ -50,39 +73,62 @@
       <div class="hero-content">
         <p class="eyebrow">Computer Science Student</p>
 
-        <h1>Hi, I’m <span>Ryan Bemis</span>.</h1>
+        <h1>Hi, I'm <span>Ryan Bemis</span>.</h1>
 
         <h2>
-          Currently building skills in
+          Building projects with
           <span class="typing-line">
-            <span id="typingText" class="typing-text">Python, Java, and C++.</span>
+            <span id="typingText" class="typing-text">C++, HTML, CSS, and JavaScript.</span>
           </span>
         </h2>
 
         <p class="hero-description">
-          I am a Computer Science student focused on learning practical programming,
-          web development, and software design. This portfolio is where I showcase
-          my projects, document what I am learning, and continue building toward a
-          future career in technology.
+          I am a Computer Science student at Liberty University, expected to
+          graduate in Spring 2028 with a Bachelor of Science in Computer Science.
+          I am focused on building practical projects, improving my development
+          process, and turning what I learn into work I can clearly share.
         </p>
 
         <div class="hero-buttons">
-          <a href="#projects" class="button primary-button">View My Projects</a>
+          <button class="button primary-button" id="openProjectsHero" type="button">
+            View My Projects
+          </button>
           <a href="#contact" class="button secondary-button">Contact Me</a>
         </div>
       </div>
 
-      <div class="hero-card">
-        <p class="card-label">Current Focus</p>
+      <div class="featured-project-card">
+        <div class="project-slider-topline">
+          <p class="card-label">Featured Project</p>
+          <p class="slide-count" id="slideCount">01 / 04</p>
+        </div>
 
-        <h3>Building real projects while learning the fundamentals.</h3>
+        <div class="featured-project-image">
+          <img id="featuredProjectImage" src="images/portfolio-preview.png" alt="Featured project preview" />
+        </div>
 
-        <ul>
-          <li>HTML, CSS, and JavaScript</li>
-          <li>Programming logic and problem solving</li>
-          <li>GitHub and version control</li>
-          <li>Software projects for school and personal use</li>
-        </ul>
+        <div class="featured-project-content">
+          <p class="project-date" id="featuredProjectMeta">Website - 82 KB</p>
+          <h3 id="featuredProjectTitle">Portfolio Website</h3>
+          <p id="featuredProjectDescription">
+            A personal portfolio website built to share my background, skills,
+            resume, contact information, and future projects.
+          </p>
+        </div>
+
+        <div class="project-slider-actions">
+          <button class="slider-arrow" id="prevProject" type="button" aria-label="Previous featured project">
+            Prev
+          </button>
+          <button class="button primary-button" id="featuredProjectDetails" type="button">
+            View Details
+          </button>
+          <button class="slider-arrow" id="nextProject" type="button" aria-label="Next featured project">
+            Next
+          </button>
+        </div>
+
+        <div class="slider-dots" id="sliderDots" aria-label="Featured project slides"></div>
       </div>
     </section>
 
@@ -90,22 +136,23 @@
     <section id="about" class="section">
       <div class="section-heading">
         <p class="eyebrow">About Me</p>
-        <h2>Driven by curiosity, problem-solving, and continuous improvement.</h2>
+        <h2>Curious, project-driven, and focused on growing into a stronger developer.</h2>
       </div>
 
       <div class="about-grid">
         <div>
           <p>
-            I am currently studying Computer Science and building my skills through
-            class projects, personal programming practice, and hands-on technology
-            experience. I enjoy learning how software works behind the scenes and
-            turning ideas into useful, organized applications.
+            I am currently studying Computer Science at Liberty University and
+            working toward a B.S. in Computer Science, with an expected graduation
+            date of Spring 2028. I enjoy learning how software works behind the
+            scenes and turning ideas into useful, organized applications.
           </p>
 
           <p>
-            My current goal is to become stronger in web development, programming
-            fundamentals, and project design. This website is both a resume and a
-            growing record of the projects I create along the way.
+            I started programming when I was about 10 years old, but I did not
+            keep many of my early files or projects. This website is my way of
+            rebuilding that history into a professional portfolio with projects,
+            notes, and examples of what I am learning now.
           </p>
         </div>
 
@@ -114,17 +161,17 @@
 
           <div class="fact">
             <span>School</span>
-            <strong>Computer Science Student</strong>
+            <strong>Liberty University</strong>
           </div>
 
           <div class="fact">
-            <span>Interests</span>
-            <strong>Programming, Web Development, IT, Networking</strong>
+            <span>Degree</span>
+            <strong>B.S. Computer Science, expected Spring 2028</strong>
           </div>
 
           <div class="fact">
-            <span>Currently Learning</span>
-            <strong>HTML, CSS, JavaScript, GitHub</strong>
+            <span>Main Focus</span>
+            <strong>C++, web development, GitHub, and project building</strong>
           </div>
         </div>
       </div>
@@ -134,136 +181,147 @@
     <section id="skills" class="section">
       <div class="section-heading">
         <p class="eyebrow">Skills</p>
-        <h2>Tools and technologies I am learning and using.</h2>
+        <h2>Languages, tools, and strengths I am building with.</h2>
       </div>
 
       <div class="skills-grid">
         <div class="skill-card">
-          <h3>Web Development</h3>
+          <h3>Strongest Areas</h3>
           <p>
-            HTML, CSS, JavaScript, responsive design, and basic user interface design.
+            C++, HTML, CSS, JavaScript, responsive design, programming logic,
+            and problem solving.
           </p>
         </div>
 
         <div class="skill-card">
-          <h3>Programming</h3>
+          <h3>Programming Experience</h3>
           <p>
-            Problem solving, variables, functions, loops, conditionals, arrays,
-            and object-oriented concepts.
+            Experience with C++, Python, Java, C#, and a small amount of
+            TypeScript.
           </p>
         </div>
 
         <div class="skill-card">
           <h3>Tools</h3>
           <p>
-            Visual Studio Code, GitHub, browser developer tools, and project organization.
+            Visual Studio Code, GitHub, browser developer tools, debugging,
+            documentation, and project organization.
           </p>
         </div>
 
         <div class="skill-card">
           <h3>Professional Skills</h3>
           <p>
-            Customer service, communication, troubleshooting, teamwork, and learning new systems.
+            Customer service, communication, troubleshooting, teamwork,
+            adaptability, and learning new systems quickly.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- CERTIFICATIONS SECTION -->
-    <section id="certifications" class="section">
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="section">
       <div class="section-heading">
-        <p class="eyebrow">Certifications</p>
-        <h2>Certifications and learning goals.</h2>
+        <p class="eyebrow">Experience</p>
+        <h2>Work experience that supports my technical growth.</h2>
       </div>
 
-      <div class="certification-grid">
-        <article class="certification-card">
+      <div class="experience-grid">
+        <article class="experience-card">
           <div>
-            <p class="cert-status">In Progress</p>
-            <h3>CompTIA A+</h3>
+            <p class="experience-date">Current</p>
+            <h3>Sales Advisor, Best Buy</h3>
             <p>
-              Building foundational knowledge in hardware, operating systems,
-              troubleshooting, networking, and IT support.
+              Help customers compare technology products, explain features in
+              clear language, troubleshoot questions, and learn new systems in a
+              fast-paced retail environment.
             </p>
           </div>
 
-          <span>IT Support</span>
+          <span>Tech + Communication</span>
         </article>
 
-        <article class="certification-card">
+        <article class="experience-card">
           <div>
-            <p class="cert-status">Learning</p>
-            <h3>Web Development Fundamentals</h3>
+            <p class="experience-date">Previous</p>
+            <h3>Server, Shakers</h3>
             <p>
-              Practicing HTML, CSS, JavaScript, responsive design, GitHub,
-              and project-based web development.
+              Built customer service, teamwork, time management, and problem
+              solving skills through several years of hands-on restaurant work
+              as a server.
             </p>
           </div>
 
-          <span>Web Dev</span>
+          <span>Reliability + Teamwork</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- LEARNING GOALS SECTION -->
+    <section id="learning" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Learning Goals</p>
+        <h2>Areas I am actively improving.</h2>
+      </div>
+
+      <div class="learning-grid">
+        <article class="learning-card">
+          <div>
+            <p class="learning-status">Active</p>
+            <h3>Git and GitHub</h3>
+            <p>
+              Becoming more comfortable with version control, repositories,
+              commits, project publishing, and professional code organization.
+            </p>
+          </div>
+
+          <span>Version Control</span>
         </article>
 
-        <article class="certification-card">
+        <article class="learning-card">
           <div>
-            <p class="cert-status">Future Goal</p>
-            <h3>Version Control</h3>
+            <p class="learning-status">Building</p>
+            <h3>Portfolio Projects</h3>
             <p>
-              Learning how to manage code, track changes, publish projects,
-              and organize software development work professionally.
+              Creating and documenting projects that show practical programming,
+              web development, and software design ability.
             </p>
           </div>
 
-          <span>GitHub</span>
+          <span>Projects</span>
+        </article>
+
+        <article class="learning-card">
+          <div>
+            <p class="learning-status">Ongoing</p>
+            <h3>Software Fundamentals</h3>
+            <p>
+              Strengthening core concepts such as data structures, object-oriented
+              programming, debugging, clean code, and project planning.
+            </p>
+          </div>
+
+          <span>Computer Science</span>
         </article>
       </div>
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section id="projects" class="section">
-      <div class="section-heading">
+    <section id="projects" class="section projects-preview-section">
+      <div>
         <p class="eyebrow">Projects</p>
-        <h2>Projects that show what I am learning and building.</h2>
+        <h2>Open my project library.</h2>
+
+        <p>
+          I am keeping this section compact so the main page stays easy to scan.
+          The full project library opens in an overlay on this same website, with
+          sorting by upload date, type, or project size.
+        </p>
       </div>
 
-      <!-- FILTERS -->
-      <div class="filters">
-        <div>
-          <label for="typeFilter">Type</label>
-          <select id="typeFilter">
-            <option value="all">All</option>
-            <option value="school">School Project</option>
-            <option value="website">Website</option>
-            <option value="game">Game</option>
-            <option value="software">Software Program</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="sizeFilter">Size</label>
-          <select id="sizeFilter">
-            <option value="all">All</option>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="timeFilter">Time</label>
-          <select id="timeFilter">
-            <option value="all">All</option>
-            <option value="recent">Recent</option>
-            <option value="older">Older</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- JavaScript will put project cards inside this div -->
-      <div class="project-grid" id="projectGrid"></div>
-
-      <p id="noProjectsMessage" class="no-projects-message">
-        No projects match those filters yet.
-      </p>
+      <button class="button primary-button" id="openProjectsSection" type="button">
+        Open Project Library
+      </button>
     </section>
 
     <!-- RESUME SECTION -->
@@ -294,21 +352,22 @@
     <section id="contact" class="section">
       <div class="section-heading">
         <p class="eyebrow">Contact</p>
-        <h2>Let’s connect.</h2>
+        <h2>Let's connect.</h2>
       </div>
 
       <div class="contact-grid">
         <div>
           <p>
-            I am interested in opportunities where I can continue learning,
+            I am interested in opportunities where I can keep learning,
             contribute to real projects, and grow as a programmer and technology
             professional.
           </p>
 
           <div class="contact-links">
-            <p><strong>Email:</strong> your-email@example.com</p>
-            <p><strong>GitHub:</strong> github.com/yourusername</p>
-            <p><strong>LinkedIn:</strong> linkedin.com/in/yourusername</p>
+            <p><strong>Email:</strong> <a href="mailto:2025rdbemis@gmail.com">2025rdbemis@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:4342599170">434-259-9170</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/SenseiBemis1" target="_blank">github.com/SenseiBemis1</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ryan-bemis-74225a405/" target="_blank">linkedin.com/in/ryan-bemis-74225a405</a></p>
           </div>
         </div>
 
@@ -336,7 +395,7 @@
           </button>
 
           <p id="formSuccess" class="form-success">
-            Your message looks good. Later, you can connect this form to actually send emails.
+            Your email app should open with the message ready to send.
           </p>
         </form>
       </div>
@@ -344,9 +403,83 @@
 
   </main>
 
+  <!-- PROJECT LIBRARY OVERLAY -->
+  <div class="project-overlay" id="projectOverlay" aria-hidden="true">
+    <div class="project-backdrop" id="projectBackdrop"></div>
+
+    <section
+      class="project-drawer"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="projectDrawerTitle"
+    >
+      <div class="drawer-header">
+        <div>
+          <p class="eyebrow">Project Library</p>
+          <h2 id="projectDrawerTitle">Projects</h2>
+        </div>
+
+        <button class="close-drawer" id="closeProjects" type="button" aria-label="Close project library">
+          x
+        </button>
+      </div>
+
+      <div class="drawer-controls">
+        <label id="projectSortLabel">Organize projects by</label>
+
+        <div class="sort-dropdown" id="sortDropdown">
+          <button
+            class="sort-button"
+            id="sortButton"
+            type="button"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+            aria-labelledby="projectSortLabel sortButton"
+          >
+            Upload Date: Newest
+          </button>
+
+          <div class="sort-menu" id="sortMenu" role="listbox">
+            <button class="sort-option active" type="button" role="option" data-sort="uploaded-newest">
+              Upload Date: Newest
+            </button>
+            <button class="sort-option" type="button" role="option" data-sort="uploaded-oldest">
+              Upload Date: Oldest
+            </button>
+            <button class="sort-option" type="button" role="option" data-sort="size-largest">
+              File Size: Largest
+            </button>
+            <button class="sort-option" type="button" role="option" data-sort="size-smallest">
+              File Size: Smallest
+            </button>
+            <button class="sort-option" type="button" role="option" data-sort="type">
+              Type
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-list-view" id="projectListView">
+        <div class="project-grid" id="projectGrid"></div>
+
+        <p id="noProjectsMessage" class="no-projects-message">
+          No projects have been added yet.
+        </p>
+      </div>
+
+      <div class="project-detail-view" id="projectDetailView" hidden>
+        <button class="back-to-projects" id="backToProjects" type="button">
+          Back to projects
+        </button>
+
+        <div id="projectDetailContent"></div>
+      </div>
+    </section>
+  </div>
+
   <!-- FOOTER -->
   <footer class="site-footer">
-    <p>&copy; 2026 Ryan Bemis. Built with HTML, CSS, and JavaScript.</p>
+    <p>&copy; 2026 Ryan Bemis. All rights reserved.</p>
   </footer>
 
   <!-- Project data file first -->
